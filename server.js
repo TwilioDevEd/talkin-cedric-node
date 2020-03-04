@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.render('home', {number: "42", layout: false});
+  response.render('home', {number: process.env.TWILIO_NUMBER, layout: false});
 });
 
 // listen for requests :)
