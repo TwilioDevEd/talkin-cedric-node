@@ -3,7 +3,7 @@
 
 const marshaller = require("@aws-sdk/eventstream-marshaller"); // for converting binary event stream messages to and from JSON
 const util_utf8_node = require("@aws-sdk/util-utf8-node"); // utilities for encoding and decoding UTF8
-const mulaw = require("alawmulaw/mulaw");
+const mulaw = require("alawmulaw").mulaw;
 const express = require("express");
 const hbs = require("express-handlebars");
 const expressWebSocket = require("express-ws");
