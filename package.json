@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-sdk/eventstream-marshaller": "0.1.0-preview.2",
     "@aws-sdk/util-utf8-node": "0.1.0-preview.1",
+    "alawmulaw": "^6.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-ws": "^4.0.0",
