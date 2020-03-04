@@ -14,8 +14,10 @@
     "@aws-sdk/util-utf8-node": "0.1.0-preview.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-ws": "^4.0.0",
     "query-string": "^6.11.1",
-    "twilio": "^3.39.5"
+    "twilio": "^3.39.5",
+    "websocket-stream": "^5.5.0"
   },
   "engines": {
     "node": "12.x"
