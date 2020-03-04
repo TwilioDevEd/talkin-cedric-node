@@ -9,7 +9,7 @@ const hbs = require("express-handlebars");
 const expressWebSocket = require("express-ws");
 const Transform = require("stream").Transform;
 const websocketStream = require("websocket-stream/stream");
-const v4 = require("./aws-signature-v4"); // to generate our pre-signed URL
+const v4 = require("./lib/aws-signature-v4"); // to generate our pre-signed URL
 
 // our converter between binary AWS event stream messages and JSON
 const eventStreamMarshaller = new marshaller.EventStreamMarshaller(
