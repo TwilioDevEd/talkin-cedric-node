@@ -1,23 +1,22 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "talkin-cedric",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node .",
+    "dev": "nodenv ."
   },
   "dependencies": {
     "@aws-sdk/eventstream-marshaller": "0.1.0-preview.2",
     "@aws-sdk/util-utf8-node": "0.1.0-preview.1",
-    "alawmulaw": "^6.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-ws": "^4.0.0",
     "query-string": "^6.11.1",
-    "twilio": "^3.39.5",
+    "twilio": "^3.42.2",
+    "wavefile": "^11.0.0",
     "websocket-stream": "^5.5.0"
   },
   "engines": {
@@ -31,5 +30,8 @@
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "node-env-run": "^3.0.2"
+  }
 }

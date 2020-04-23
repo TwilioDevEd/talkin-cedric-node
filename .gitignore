@@ -4,3 +4,4 @@ package-lock.json
 // Must update on Glitch
 .env
 shrinkwrap.yaml
+.DS_Store
