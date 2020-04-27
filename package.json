@@ -32,6 +32,7 @@
     "express"
   ],
   "devDependencies": {
+    "configure-env": "^1.0.0",
     "node-env-run": "^3.0.2"
   }
 }

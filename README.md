@@ -1,30 +1,58 @@
-# hello-express
+[![Learn to code with TwilioQuest](https://img.shields.io/static/v1?label=TwilioQuest&message=Learn%20to%20code%21&color=F22F46&labelColor=1f243c&style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAASFBMVEUAAAAZGRkcHBwjIyMoKCgAAABgYGBoaGiAgICMjIyzs7PJycnMzMzNzc3UoBfd3d3m5ubqrhfrMEDu7u739/f4vSb/3AD///9tbdyEAAAABXRSTlMAAAAAAMJrBrEAAAKoSURBVHgB7ZrRcuI6EESdyxXGYoNFvMD//+l2bSszRgyUYpFAsXOeiJGmj4NkuWx1Qeh+Ekl9DgEXOBwOx+Px5xyQhDykfgq4wG63MxxaR4ddIkg6Ul3g84vCIcjPBA5gmUMeXESrlukuoK33+33uID8TWeLAdOWsKpJYzwVMB7bOzYSGOciyUlXSn0/ABXTosJ1M1SbypZ4O4MbZuIDMU02PMbauhhHMHXbmebmALIiEbbbbbUrpF1gwE9kFfRNAJaP+FQEXCCTGyJ4ngDrjOFo3jEL5JdqjF/pueR4cCeCGgAtwmuRS6gDwaRiGvu+DMFwSBLTE3+jF8JyuV1okPZ+AC4hDFhCHyHQjdjPHUKFDlHSJkHQXMB3KpSwXNGJPcwwTdZiXlRN0gSp0zpWxNtM0beYE0nRH6QIbO7rawwXaBYz0j78gxjokDuv12gVeUuBD0MDi0OQCLvDaAho4juP1Q/jkAncXqIcCfd+7gAu4QLMACCLxpRsSuQh0igu0C9Svhi7weAGZg50L3IE3cai4IfkNZAC8dfdhsUD3CgKBVC9JE5ABAFzg4QL/taYPAAWrHdYcgfLaIgAXWJ7OV38n1LEF8tt2TH29E+QAoDoO5Ve/LtCQDmKM9kPbvCEBApK+IXzbcSJ0cIGF6e8gpcRhUDogWZ8JnaWjPXc/fNnBBUKRngiHgTUSivSzDRDgHZQOLvBQgf8rRt+VdBUUhwkU6VpJ+xcOwQUqZr+mR0kvBUgv6cB4+37hQAkXqE8PwGisGhJtN4xAHMzrsgvI7rccXqSvKh6jltGlrOHA3Xk1At3LC4QiPdX9/0ndHpGVvTjR4bZA1ypAKgVcwE5vx74ulwIugDt8e/X7JgfkucBMIAr26ndnB4UCLnDOqvteQsHlgX9N4A+c4cW3DXSPbwAAAABJRU5ErkJggg==)](https://twilio.com/quest?utm_source=gh-badge&utm_medium=referral&utm_campaign=talkin-cedric)
 
-A server that serves a webpage, its resources, and some data
+# Talkin' Cedric
 
+This project uses [Twilio Media Streams](https://www.twilio.com/media-streams) and [Amazon Transcribe](https://aws.amazon.com/transcribe/). It will convert your speech to text and repeat what you said back to you in the voice of Cedric, your favorite robot, star of [TwilioQuest](https://twilio.com/quest?utm_source=gh&utm_medium=referral&utm_campaign=talkin-cedric).
 
-## Your Project
+## Installation
 
-On the front-end,
+Install the [Twilio CLI](https://twil.io/cli)
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+### Glitch
 
-On the back-end,
+Locate your Twilio number
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+```bash
+twilio phone-numbers:list
+```
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+Set your incoming voice Webhook to your Glitch URL
 
+```bash
+twilio phone-numbers:update +15552223344 --voice-url="https://your-glitch-project.glitch.me/twiml"
+```
 
-## Made by [Glitch](https://glitch.com/)
+Copy the [`.env.example`](./.env.example) keys and configure the values in your [`.env`](./.env) file.
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+### Develop locally
 
-Find out more [about Glitch](https://glitch.com/about).
+Install your dependencies
 
-( ᵔ ᴥ ᵔ )
+```bash
+npm install
+```
+
+Configure your environment
+
+```bash
+npx configure-env
+```
+
+Locate your existing phone number
+
+```bash
+twilio phone-numbers:list
+```
+
+Set up an ngrok tunnel to your local server
+
+```bash
+twilio phone-numbers:update +15552223344 --voice-url="https://localhost:3000/twiml"
+```
+
+## Learn more
+
+* [More Twilio Media Streams examples](https://github.com/twilio/media-streams)
+* [`<Stream>` Documenation](https://www.twilio.com/docs/voice/twiml/stream)
+* [Amazon Transcribe using Websockets Documentation](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html)
+* [Amazon Transcribe Websockets Sample Application](https://github.com/aws-samples/amazon-transcribe-websocket-static)
