@@ -56,3 +56,9 @@ twilio phone-numbers:update +15552223344 --voice-url="https://localhost:3000/twi
 * [`<Stream>` Documenation](https://www.twilio.com/docs/voice/twiml/stream)
 * [Amazon Transcribe using Websockets Documentation](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html)
 * [Amazon Transcribe Websockets Sample Application](https://github.com/aws-samples/amazon-transcribe-websocket-static)
+
+## Meta
+
+* No warranty expressed or implied. Software is as is. Diggity.
+* [MIT License](http://www.opensource.org/licenses/mit-license.html)
+* Lovingly crafted by Twilio Developer Education.
