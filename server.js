@@ -81,6 +81,17 @@ app.ws("/media", (ws, req) => {
   });
 });
 
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  console.trace(err);
+  res.status(err.status || 500);
+  res.send({
+    message: err.message,
+    error: {},
+  });
+});
+
 const listener = app.listen(3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });

@@ -10,45 +10,49 @@ Install the [Twilio CLI](https://twil.io/cli)
 
 ### Glitch
 
-Locate your Twilio number
+1. Locate your Twilio number
 
-```bash
-twilio phone-numbers:list
-```
+    ```bash
+    twilio phone-numbers:list
+    ```
 
-Set your incoming voice Webhook to your Glitch URL
+1. Set your incoming voice Webhook to your Glitch URL
 
-```bash
-twilio phone-numbers:update +15552223344 --voice-url="https://your-glitch-project.glitch.me/twiml"
-```
+    ```bash
+    twilio phone-numbers:update +15552223344 --voice-url="https://your-glitch-project.glitch.me/twiml"
+    ```
 
-Copy the [`.env.example`](./.env.example) keys and configure the values in your [`.env`](./.env) file.
+1. Copy the [`.env.example`](./.env.example) keys and configure the values in your [`.env`](./.env) file.
 
+    ```bash
+    cp .env.example .env
+    ```
+    See [Twilio Account Settings](#twilio-account-settings) to locate the necessary Twilio environment variables.
 ### Develop locally
 
-Install your dependencies
+1. Install your dependencies
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
-Configure your environment
+1. Configure your environment
 
-```bash
-npx configure-env
-```
+    ```bash
+    npx configure-env
+    ```
 
-Locate your existing phone number
+1. Locate your existing phone number
 
-```bash
-twilio phone-numbers:list
-```
+    ```bash
+    twilio phone-numbers:list
+    ```
 
-Set up an ngrok tunnel to your local server
+1. Set up an ngrok tunnel to your local server
 
-```bash
-twilio phone-numbers:update +15552223344 --voice-url="https://localhost:3000/twiml"
-```
+    ```bash
+    twilio phone-numbers:update +15552223344 --voice-url="https://localhost:3000/twiml"
+    ```
 
 ## Learn more
 
